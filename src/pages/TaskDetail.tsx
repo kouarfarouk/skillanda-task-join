@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -50,10 +49,10 @@ const mockTask = {
     { id: 5, title: 'Test on mobile devices', completed: false }
   ],
   messages: [
-    { id: 1, user: { name: 'Alex Brown', avatar: 'https://i.pravatar.cc/150?img=11' }, text: 'I've uploaded the design files to the shared folder. Let me know what you think!', timestamp: '2025-05-18T14:30:00' },
-    { id: 2, user: { name: 'Jordan Lee', avatar: 'https://i.pravatar.cc/150?img=32' }, text: 'These look great! I'll start implementing the homepage design this week.', timestamp: '2025-05-18T15:45:00' },
+    { id: 1, user: { name: 'Alex Brown', avatar: 'https://i.pravatar.cc/150?img=11' }, text: 'I\'ve uploaded the design files to the shared folder. Let me know what you think!', timestamp: '2025-05-18T14:30:00' },
+    { id: 2, user: { name: 'Jordan Lee', avatar: 'https://i.pravatar.cc/150?img=32' }, text: 'These look great! I\'ll start implementing the homepage design this week.', timestamp: '2025-05-18T15:45:00' },
     { id: 3, user: { name: 'Taylor Kim', avatar: 'https://i.pravatar.cc/150?img=28' }, text: 'Just a quick question - are we using the new color palette for all pages or just the homepage?', timestamp: '2025-05-19T09:15:00' },
-    { id: 4, user: { name: 'Alex Brown', avatar: 'https://i.pravatar.cc/150?img=11' }, text: 'All pages should use the new palette. I've added the color codes to the project documentation.', timestamp: '2025-05-19T10:22:00' }
+    { id: 4, user: { name: 'Alex Brown', avatar: 'https://i.pravatar.cc/150?img=11' }, text: 'All pages should use the new palette. I\'ve added the color codes to the project documentation.', timestamp: '2025-05-19T10:22:00' }
   ]
 };
 
