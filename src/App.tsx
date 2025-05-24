@@ -12,6 +12,7 @@ import MyTasks from "./pages/MyTasks";
 import Projects from "./pages/Projects";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
