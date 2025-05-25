@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillanda - Task Management Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-b from-sky-50 to-white">
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#0EA5E9"/>
+                            <path d="M14 20H26M20 14V26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <h1 class="text-2xl font-bold text-gray-900">Skillanda</h1>
+                    </div>
+                    <nav class="flex items-center space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Explorer</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">My Tasks</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                    </nav>
+                    <div class="flex items-center gap-2">
+                        <button class="border border-gray-200 text-gray-700 hover:bg-gray-50 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+                            Login
+                        </button>
+                        <button class="bg-teal-600 hover:bg-teal-700 text-white inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4 py-12">
+            <section class="mb-24 text-center">
+                <h2 class="text-5xl font-bold mb-6 text-gray-900">Task Management For Teams</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    Skillanda helps teams organize, track, and manage their work together. Create projects, assign tasks, and collaborate in real-time.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <button class="bg-teal-600 hover:bg-teal-700 text-white h-11 rounded-md px-8 text-lg inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+                        Explore Tasks
+                    </button>
+                    <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 h-11 rounded-md px-8 text-lg inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-background">
+                        View Projects
+                    </button>
+                </div>
+            </section>
+
+            <section class="mb-24">
+                <h3 class="text-3xl font-bold mb-8 text-center text-gray-900">How It Works</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-lg transition-shadow p-6">
+                        <div class="mb-4 bg-sky-100 p-3 rounded-lg w-12 h-12 flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Create & Manage Tasks</h4>
+                        <p class="text-gray-600">Create tasks, assign them to team members, set deadlines, and track progress all in one place.</p>
+                    </div>
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-lg transition-shadow p-6">
+                        <div class="mb-4 bg-teal-100 p-3 rounded-lg w-12 h-12 flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Join Public Tasks</h4>
+                        <p class="text-gray-600">Browse publicly available tasks, request to join, and collaborate with other team members.</p>
+                    </div>
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-lg transition-shadow p-6">
+                        <div class="mb-4 bg-indigo-100 p-3 rounded-lg w-12 h-12 flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Team Communication</h4>
+                        <p class="text-gray-600">Chat with team members directly within tasks, share updates, and stay connected.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <div class="bg-gradient-to-r from-teal-600 to-sky-600 rounded-2xl p-12 text-white text-center">
+                    <h3 class="text-3xl font-bold mb-4">Ready to get started?</h3>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">Join Skillanda today and transform how your team works together.</p>
+                    <button class="bg-white text-teal-600 hover:bg-gray-100 h-11 rounded-md px-8 text-lg inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+                        Create Free Account
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-100">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center gap-2 mb-4 md:mb-0">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#0EA5E9"/>
+                            <path d="M14 20H26M20 14V26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="text-gray-900 font-semibold">Skillanda</span>
+                    </div>
+                    <div class="flex gap-8">
+                        <a href="#" class="text-gray-600 hover:text-teal-600">Features</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600">Pricing</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600">Documentation</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600">About Us</a>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-gray-500 text-sm">
+                        &copy; 2025 Skillanda. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
