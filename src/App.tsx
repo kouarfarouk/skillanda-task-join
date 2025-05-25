@@ -10,6 +10,7 @@ import TaskDetail from "./pages/TaskDetail";
 import CreateTask from "./pages/CreateTask";
 import MyTasks from "./pages/MyTasks";
 import Projects from "./pages/Projects";
+import Skillers from "./pages/Skillers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/create-task" element={<CreateTask />} />
           <Route path="/my-tasks" element={<MyTasks />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/skillers" element={<Skillers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
