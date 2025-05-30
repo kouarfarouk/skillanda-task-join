@@ -10,6 +10,8 @@ import TaskDetail from "./pages/TaskDetail";
 import CreateTask from "./pages/CreateTask";
 import MyTasks from "./pages/MyTasks";
 import Projects from "./pages/Projects";
+import CreateProject from "./pages/CreateProject";
+import ProjectDetail from "./pages/ProjectDetail";
 import Skillers from "./pages/Skillers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/create-task" element={<CreateTask />} />
           <Route path="/my-tasks" element={<MyTasks />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/create-project" element={<CreateProject />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/skillers" element={<Skillers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />

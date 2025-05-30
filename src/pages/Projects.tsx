@@ -87,7 +87,10 @@ const Projects = () => {
             <p className="text-gray-600 mt-1">Manage your work projects and teams</p>
           </div>
           <div className="mt-4 md:mt-0">
-            <Button className="bg-teal-600 hover:bg-teal-700">
+            <Button 
+              className="bg-teal-600 hover:bg-teal-700"
+              onClick={() => navigate('/create-project')}
+            >
               <PlusCircle className="mr-2 h-4 w-4" />
               Create New Project
             </Button>
@@ -146,7 +149,11 @@ const Projects = () => {
                           </div>
                         )}
                       </div>
-                      <Button variant="outline" size="sm">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => navigate(`/projects/${project.id}`)}
+                      >
                         <Users className="h-4 w-4 mr-1" />
                         View Project
                       </Button>
