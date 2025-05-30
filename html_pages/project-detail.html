@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Skillanda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <div class="text-2xl font-bold text-teal-600">Skillanda</div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors">Tasks</a>
+                        <a href="#" class="text-teal-600 font-medium">Projects</a>
+                        <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors">Skillers</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <i data-lucide="bell" class="h-5 w-5"></i>
+                    </button>
+                    <div class="h-8 w-8 rounded-full bg-teal-600 flex items-center justify-center text-white text-sm font-medium">
+                        U
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen bg-gray-50">
+        <main class="container mx-auto px-4 py-8">
+            <div class="flex items-center gap-4 mb-6">
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                    <i data-lucide="arrow-left" class="h-4 w-4 mr-2"></i>
+                    Back to Projects
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Project Info Card -->
+                <div class="lg:col-span-2">
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-2xl font-semibold leading-none tracking-tight">Project Details</h3>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                        <i data-lucide="edit-2" class="h-4 w-4 mr-2"></i>
+                                        Edit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 space-y-6">
+                            <div>
+                                <label class="text-sm font-medium text-gray-600 mb-2 block">Project Name</label>
+                                <p class="text-lg font-semibold">Website Overhaul Project</p>
+                            </div>
+
+                            <div>
+                                <label class="text-sm font-medium text-gray-600 mb-2 block">Description</label>
+                                <p class="text-gray-700">Complete redesign and development of company website with modern UI/UX principles and responsive design.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600 mb-2 block">Status</label>
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800">In Progress</span>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600 mb-2 block">Due Date</label>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="calendar" class="h-4 w-4 text-gray-500"></i>
+                                        <span>8/25/2025</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-sm font-medium text-gray-600 mb-2 block">Progress</label>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-sm">
+                                        <span>5/12 Tasks Completed</span>
+                                        <span class="font-medium">32%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 32%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Members Card -->
+                <div>
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <h3 class="text-lg font-semibold leading-none tracking-tight">Team Members</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                                        <img class="aspect-square h-full w-full" alt="Alex Brown" src="https://i.pravatar.cc/150?img=11">
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Alex Brown</p>
+                                        <p class="text-sm text-gray-600">Project Manager</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                                        <img class="aspect-square h-full w-full" alt="Jordan Lee" src="https://i.pravatar.cc/150?img=32">
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Jordan Lee</p>
+                                        <p class="text-sm text-gray-600">Frontend Developer</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                                        <img class="aspect-square h-full w-full" alt="Taylor Kim" src="https://i.pravatar.cc/150?img=28">
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Taylor Kim</p>
+                                        <p class="text-sm text-gray-600">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-full mt-4">
+                                    <i data-lucide="users" class="h-4 w-4 mr-2"></i>
+                                    Add Member
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasks Section -->
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm mt-6">
+                <div class="flex flex-col space-y-1.5 p-6">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-semibold leading-none tracking-tight">Project Tasks</h3>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 bg-teal-600 hover:bg-teal-700 text-white">
+                            <i data-lucide="plus" class="h-4 w-4 mr-2"></i>
+                            Add Task
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <div class="space-y-4">
+                        <div class="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-medium">Design new homepage layout</h4>
+                                <div class="flex gap-2">
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800">Completed</span>
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-red-100 text-red-800">High</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="users" class="h-3 w-3"></i>
+                                        Taylor Kim
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="clock" class="h-3 w-3"></i>
+                                        Due 6/15/2025
+                                    </div>
+                                </div>
+                                <i data-lucide="check-circle" class="h-4 w-4 text-green-600"></i>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-medium">Implement responsive navigation</h4>
+                                <div class="flex gap-2">
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800">In Progress</span>
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-red-100 text-red-800">High</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="users" class="h-3 w-3"></i>
+                                        Jordan Lee
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="clock" class="h-3 w-3"></i>
+                                        Due 6/20/2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-medium">Create contact form component</h4>
+                                <div class="flex gap-2">
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-gray-100 text-gray-800">Todo</span>
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800">Medium</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="users" class="h-3 w-3"></i>
+                                        Jordan Lee
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="clock" class="h-3 w-3"></i>
+                                        Due 6/25/2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-medium">Set up analytics tracking</h4>
+                                <div class="flex gap-2">
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-gray-100 text-gray-800">Todo</span>
+                                    <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800">Low</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="users" class="h-3 w-3"></i>
+                                        Alex Brown
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <i data-lucide="clock" class="h-3 w-3"></i>
+                                        Due 7/1/2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   ArrowLeft, 
   Edit2, 
@@ -194,15 +193,7 @@ const ProjectDetail = () => {
                     <label className="text-sm font-medium text-gray-600 mb-2 block">Due Date</label>
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-gray-500" />
-                      {isEditing ? (
-                        <Input 
-                          type="date"
-                          value={projectData.dueDate}
-                          onChange={(e) => setProjectData({ ...projectData, dueDate: e.target.value })}
-                        />
-                      ) : (
-                        <span>{new Date(projectData.dueDate).toLocaleDateString()}</span>
-                      )}
+                      <span>{new Date(projectData.dueDate).toLocaleDateString()}</span>
                     </div>
                   </div>
                 </div>
