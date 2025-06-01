@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Status - Skillanda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Navigation Bar -->
+        <nav class="bg-white shadow-sm">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-3">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#0EA5E9"/>
+                            <path d="M14 20H26M20 14V26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="text-xl font-bold text-gray-900">Skillanda</span>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Tasks</a>
+                        <a href="#" class="text-teal-600 font-medium border-b-2 border-teal-600">My Tasks</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                        <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Skillers</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                            Create Task
+                        </button>
+                        <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container mx-auto px-4 py-8">
+            <div class="max-w-2xl mx-auto">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Update Task Status</h1>
+                        <p class="text-gray-600 mt-1">Update the progress and status of "Website Redesign"</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <form class="space-y-6">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h3 class="font-medium text-gray-900 mb-2">Website Redesign</h3>
+                            <div class="flex items-center gap-2">
+                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800">In Progress</div>
+                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-red-100 text-red-800">High Priority</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="status" class="block text-sm font-medium text-gray-700 mb-2">New Status</label>
+                            <select id="status" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent">
+                                <option value="Not Started">Not Started</option>
+                                <option value="Planning">Planning</option>
+                                <option value="In Progress" selected>In Progress</option>
+                                <option value="Review">Under Review</option>
+                                <option value="Completed">Completed</option>
+                                <option value="On Hold">On Hold</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Progress Update</label>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-sm text-gray-600 w-16">Current:</span>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 35%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-700 w-12">35%</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-sm text-gray-600 w-16">New:</span>
+                                    <input type="range" min="0" max="100" value="50" class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                    <span class="text-sm font-medium text-gray-700 w-12">50%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="update-note" class="block text-sm font-medium text-gray-700 mb-2">Status Update Note</label>
+                            <textarea id="update-note" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent" placeholder="Add a note about this status update (optional)..."></textarea>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex items-start gap-3">
+                                <svg class="h-5 w-5 text-blue-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 16v-4"/>
+                                    <path d="M12 8h.01"/>
+                                </svg>
+                                <div>
+                                    <h4 class="text-sm font-medium text-blue-900">Status Update Notification</h4>
+                                    <p class="text-sm text-blue-700 mt-1">All team members will be notified of this status update via email and in-app notifications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end gap-3 pt-6 border-t">
+                            <button type="button" class="border border-gray-300 bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded-md text-sm font-medium">Cancel</button>
+                            <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-md text-sm font-medium">Update Status</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

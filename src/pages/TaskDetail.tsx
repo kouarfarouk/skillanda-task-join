@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -63,6 +62,8 @@ const TaskDetail = () => {
   const { id } = useParams<{id: string}>();
   const { toast } = useToast();
   const [newMessage, setNewMessage] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTask, setEditedTask] = useState(mockTask);
   
   // In a real app, we would fetch the task based on the ID
   const task = mockTask;
@@ -112,6 +113,45 @@ const TaskDetail = () => {
     }
   };
 
+  const handleEditTask = () => {
+    setIsEditing(true);
+    setEditedTask(task);
+  };
+
+  const handleSaveTask = () => {
+    toast({
+      title: "Task Updated",
+      description: "Task details have been successfully updated.",
+    });
+    setIsEditing(false);
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditing(false);
+    setEditedTask(task);
+  };
+
+  const handleUpdateStatus = () => {
+    toast({
+      title: "Status Updated", 
+      description: "Task status has been updated successfully.",
+    });
+  };
+
+  const handleAcceptJoinRequest = (userId: number) => {
+    toast({
+      title: "Request Accepted",
+      description: "User has been added to the team.",
+    });
+  };
+
+  const handleRejectJoinRequest = (userId: number) => {
+    toast({
+      title: "Request Rejected", 
+      description: "Join request has been declined.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <NavBar />
@@ -121,7 +161,15 @@ const TaskDetail = () => {
         <div className="mb-6 bg-white rounded-lg shadow p-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">{task.title}</h1>
+              {isEditing ? (
+                <Input 
+                  value={editedTask.title}
+                  onChange={(e) => setEditedTask({...editedTask, title: e.target.value})}
+                  className="text-2xl font-bold mb-2"
+                />
+              ) : (
+                <h1 className="text-2xl font-bold text-gray-900">{task.title}</h1>
+              )}
               <div className="flex flex-wrap items-center gap-3 mt-2">
                 <Badge className={getStatusColor(task.status)}>{task.status}</Badge>
                 <Badge className={getPriorityColor(task.priority)}>{task.priority}</Badge>
@@ -132,8 +180,17 @@ const TaskDetail = () => {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" className="text-gray-600">Edit</Button>
-              <Button className="bg-teal-600 hover:bg-teal-700">Update Status</Button>
+              {isEditing ? (
+                <>
+                  <Button variant="outline" onClick={handleCancelEdit}>Cancel</Button>
+                  <Button onClick={handleSaveTask} className="bg-teal-600 hover:bg-teal-700">Save</Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="outline" onClick={handleEditTask}>Edit</Button>
+                  <Button onClick={handleUpdateStatus} className="bg-teal-600 hover:bg-teal-700">Update Status</Button>
+                </>
+              )}
             </div>
           </div>
           
@@ -158,6 +215,52 @@ const TaskDetail = () => {
           </div>
         </div>
 
+        {/* Join Requests Section */}
+        {task.joinRequests.length > 0 && (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <UserPlus className="h-5 w-5" />
+                Join Requests ({task.joinRequests.length})
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {task.joinRequests.map((request) => (
+                  <div key={request.id} className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={request.avatar} />
+                        <AvatarFallback>{request.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-medium text-gray-900">{request.name}</p>
+                        <p className="text-sm text-gray-500">{request.role}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button 
+                        size="sm" 
+                        onClick={() => handleAcceptJoinRequest(request.id)}
+                        className="bg-green-600 hover:bg-green-700"
+                      >
+                        Accept
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleRejectJoinRequest(request.id)}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Task Details */}
@@ -167,7 +270,15 @@ const TaskDetail = () => {
                 <CardTitle>Description</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 leading-relaxed">{task.description}</p>
+                {isEditing ? (
+                  <Textarea 
+                    value={editedTask.description}
+                    onChange={(e) => setEditedTask({...editedTask, description: e.target.value})}
+                    className="min-h-[120px]"
+                  />
+                ) : (
+                  <p className="text-gray-700 leading-relaxed">{task.description}</p>
+                )}
               </CardContent>
             </Card>
 
