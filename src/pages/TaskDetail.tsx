@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import NavBar from '@/components/NavBar';
@@ -18,7 +18,9 @@ import {
   Users, 
   UserPlus, 
   X,
-  Send
+  Send,
+  Star,
+  Plus
 } from 'lucide-react';
 
 // Mock data for a specific task
@@ -31,6 +33,7 @@ const mockTask = {
   dueDate: '2025-06-15',
   createdAt: '2025-05-01',
   progress: 35,
+  totalPoints: 15, // Total points added to this task
   members: [
     { id: 1, name: 'Alex Brown', avatar: 'https://i.pravatar.cc/150?img=11', role: 'Creator' },
     { id: 2, name: 'Jordan Lee', avatar: 'https://i.pravatar.cc/150?img=32', role: 'Designer' },
@@ -64,6 +67,9 @@ const TaskDetail = () => {
   const [newMessage, setNewMessage] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [editedTask, setEditedTask] = useState(mockTask);
+  const [pointsToAdd, setPointsToAdd] = useState(1);
+  const [totalPoints, setTotalPoints] = useState(mockTask.totalPoints);
+  const [currentSessionPoints, setCurrentSessionPoints] = useState(0);
   
   // In a real app, we would fetch the task based on the ID
   const task = mockTask;
@@ -152,6 +158,18 @@ const TaskDetail = () => {
     });
   };
 
+  const handleAddPoints = () => {
+    if (pointsToAdd >= 1) {
+      setTotalPoints(prev => prev + pointsToAdd);
+      setCurrentSessionPoints(prev => prev + pointsToAdd);
+      
+      toast({
+        title: "Points Added",
+        description: `Added ${pointsToAdd} points to this task.`,
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <NavBar />
@@ -176,6 +194,10 @@ const TaskDetail = () => {
                 <div className="flex items-center text-sm text-gray-500">
                   <Calendar className="h-4 w-4 mr-1" />
                   <span>Due {new Date(task.dueDate).toLocaleDateString()}</span>
+                </div>
+                <div className="flex items-center text-sm text-amber-600">
+                  <Star className="h-4 w-4 mr-1 fill-current" />
+                  <span>{totalPoints} points</span>
                 </div>
               </div>
             </div>
@@ -214,6 +236,52 @@ const TaskDetail = () => {
             </div>
           </div>
         </div>
+
+        {/* Points Section */}
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Star className="h-5 w-5 text-amber-500" />
+              Promote Task with Points
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-end">
+                <div className="flex-1">
+                  <label htmlFor="points" className="block text-sm font-medium text-gray-700 mb-2">
+                    Add Points (minimum 1)
+                  </label>
+                  <Input
+                    id="points"
+                    type="number"
+                    min="1"
+                    value={pointsToAdd}
+                    onChange={(e) => setPointsToAdd(Math.max(1, parseInt(e.target.value) || 1))}
+                    className="w-full sm:w-32"
+                  />
+                </div>
+                <Button onClick={handleAddPoints} className="bg-amber-600 hover:bg-amber-700">
+                  <Plus className="h-4 w-4 mr-2" />
+                  Add Points
+                </Button>
+              </div>
+              
+              <div className="bg-amber-50 rounded-lg p-4">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-sm text-gray-600">Current Session Points Added</p>
+                    <p className="text-lg font-semibold text-amber-700">{currentSessionPoints} points</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Total Task Points</p>
+                    <p className="text-lg font-semibold text-amber-700">{totalPoints} points</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Join Requests Section */}
         {task.joinRequests.length > 0 && (
